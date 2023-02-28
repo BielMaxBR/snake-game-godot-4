@@ -1,0 +1,61 @@
+[gd_scene load_steps=5 format=3 uid="uid://ctrv0sumbw8bs"]
+
+[ext_resource type="Texture2D" uid="uid://c0pyk6aaksoly" path="res://sheet.png" id="1_c5q3f"]
+[ext_resource type="Script" path="res://TileMap.gd" id="4_6aqfh"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5t3ie"]
+texture = ExtResource("1_c5q3f")
+texture_region_size = Vector2i(30, 30)
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_u7wea"]
+tile_size = Vector2i(30, 30)
+sources/0 = SubResource("TileSetAtlasSource_5t3ie")
+
+[node name="Root" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_u7wea")
+cell_quadrant_size = 60
+format = 2
+layer_0/name = "0"
+layer_0/tile_data = PackedInt32Array(0, 4, 0)
+script = ExtResource("4_6aqfh")
+
+[node name="Timer" type="Timer" parent="TileMap"]
+wait_time = 0.2
+autostart = true
+
+[node name="morte" type="Control" parent="TileMap"]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 605.0
+offset_bottom = 602.0
+
+[node name="ColorRect" type="ColorRect" parent="TileMap/morte"]
+layout_mode = 0
+offset_right = 613.0
+offset_bottom = 608.0
+color = Color(0.192157, 0.192157, 0.192157, 0.443137)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TileMap/morte"]
+layout_mode = 0
+offset_left = 266.0
+offset_top = 245.0
+offset_right = 350.0
+offset_bottom = 292.0
+text = "PERDESTE"
+
+[node name="Button" type="Button" parent="TileMap/morte"]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 349.0
+offset_right = 347.0
+offset_bottom = 380.0
+text = "reiniciar"
+
+[connection signal="timeout" from="TileMap/Timer" to="TileMap" method="_on_timer_timeout"]
+[connection signal="pressed" from="TileMap/morte/Button" to="TileMap" method="_on_button_pressed"]

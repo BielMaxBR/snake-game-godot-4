@@ -1,0 +1,11 @@
+0b7126e0c6e86d3ec295a72f5aa6e0bd
+::res://::1676566578
+chao.png::CompressedTexture2D::5238832725668077489::1674754763::1674754767::1::::<><>::
+cobra.png::CompressedTexture2D::7624754869965843790::1674754727::1674754767::1::::<><>::
+comida.png::CompressedTexture2D::193149022221223604::1674754741::1676566711::1::::<><>::
+export_presets.cfg::TextFile::-1::1674767077::0::1::::<><>::
+icon.svg::CompressedTexture2D::3675157648624352450::1674754556::1674754564::1::::<><>::
+3d.tscn::PackedScene::5613348306356648431::1676566659::0::1::::<><>::
+root.tscn::PackedScene::6142844496887406968::1676566578::0::1::::<><>::uid://c0pyk6aaksoly<>res://TileMap.gd
+sheet.png::CompressedTexture2D::6560004818651294326::1674759405::1674759406::1::::<><>::
+TileMap.gd::GDScript::-1::1674766682::0::1::::<>TileMap<>::
